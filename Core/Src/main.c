@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "bootloader.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -83,7 +83,8 @@ int main(void)
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
-
+  /*S Run bootloader logic (check which app to boot or stay in bootloader) */
+  bootloader_run();
   /* USER CODE END 2 */
 
   /* Infinite loop */
