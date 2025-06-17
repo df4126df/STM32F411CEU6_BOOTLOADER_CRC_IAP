@@ -1,3 +1,7 @@
 # Compiled source #
 ###################
 *.vscode
+*.sh
+*Debug/
+*.launch
+*.settings
