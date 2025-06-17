@@ -11,15 +11,15 @@
 #include <stdint.h>
 
 /* Declaring External Linker Script Symbols for access */
-extern uint32_t APP_1_START;
-extern uint32_t APP_2_START;
-extern uint32_t APP_1_SIZE;
-extern uint32_t APP_2_SIZE;
+extern const uint32_t APP_1_START;
+extern const uint32_t APP_2_START;
+extern const uint32_t APP_1_SIZE;
+extern const uint32_t APP_2_SIZE;
 
-#define APP_1_START_ADDR    ((uint32_t)&APP_1_START)
-#define APP_2_START_ADDR    ((uint32_t)&APP_2_START)
-#define APP_1_BANK_SIZE     APP_1_SIZE
-#define APP_2_BANK_SIZE		APP_2_SIZE
+#define APP_1_START_ADDR    ((uint32_t) &APP_1_START)
+#define APP_2_START_ADDR    ((uint32_t) &APP_2_START)
+#define APP_1_BANK_SIZE     ((uint32_t) &APP_1_SIZE)
+#define APP_2_BANK_SIZE		((uint32_t) &APP_2_SIZE)
 
 #define VALID_APP_MAGIC     0xDEADBEEF
 
