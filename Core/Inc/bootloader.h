@@ -10,6 +10,7 @@
 
 #include <stdint.h>
 
+void jump_to_application(uint32_t address);
 void bootloader_run(void);
 
 #endif /* INC_BOOTLOADER_H_ */
