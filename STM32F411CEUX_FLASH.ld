@@ -38,8 +38,8 @@ ENTRY(Reset_Handler)
 /* Highest address of the user mode stack */
 _estack = ORIGIN(RAM) + LENGTH(RAM); /* end of "RAM" Ram type memory */
 
-_Min_Heap_Size = 0x200; /* required amount of heap */
-_Min_Stack_Size = 0x400; /* required amount of stack */
+_Min_Heap_Size = 0x200 ; /* required amount of heap */
+_Min_Stack_Size = 0x400 ; /* required amount of stack */
 
 /* Memories definition */
 MEMORY
@@ -180,7 +180,15 @@ SECTIONS
     . = . + _Min_Stack_Size;
     . = ALIGN(8);
   } >RAM
-
+  
+  /*********** Reserve 1KB at the end of BOOTLOADER flash for IAP (In-application programming) flags************/
+  .iap_flags (NOLOAD) : AT(0x0800FC00)
+  {
+    . = ALIGN(4);
+    KEEP(*(.iap_flags))
+    . = ALIGN(4);
+  } > BOOTLOADER
+  
   /* Remove information from the compiler libraries */
   /DISCARD/ :
   {
